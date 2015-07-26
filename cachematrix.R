@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## cambios
+## m es matriz (y no vector)
+## el nombre de las variables *mean es s??lo alcance
+## solo se cambia la funcion MEAN A SOLVE
 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
@@ -10,14 +10,14 @@ makeCacheMatrix <- function(x = matrix()) {
             m <<- NULL
         }
         get <- function() x
-        setmean <- function(mean) m <<- mean
+        setmean <- function(solve) m <<- solve
         getmean <- function() m
         list(set = set, get = get,
              setmena = setmean,
              getmean = getmean)
 }
 
-## Write a short comment describing this function
+## se cambia la funcion solve
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -27,7 +27,7 @@ cacheSolve <- function(x, ...) {
                 return(m)
         }
         data <- x$get()
-        m <- mean(data,...)
+        m <- solve(data,...)
         x$setmean(m)
         m
 }
